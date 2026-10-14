@@ -1,4 +1,4 @@
-const DATABASES = { DB: { label: 'sample-db' } };
+const DATABASES = { DB: { label: 'workers-starter-db' } };
 
 function json(data: unknown, status = 200, headers: Record<string, string> = {}) {
   return Response.json(data, { status, headers: { 'Cache-Control': 'no-store', ...headers } });

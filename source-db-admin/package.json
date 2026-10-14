@@ -1,5 +1,5 @@
 {
-  "name": "sample-db-admin",
+  "name": "workers-starter-db-admin",
   "private": true,
   "type": "module",
   "scripts": {

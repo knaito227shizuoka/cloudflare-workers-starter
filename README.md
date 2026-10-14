@@ -1,6 +1,6 @@
 # cloudflare-workers-starter
 
-Cloudflare Workers + D1 (`sample-db`) のカウンターと、ローカル専用のDBビューア。
+Cloudflare Workers + D1 (`workers-starter-db`) のカウンターと、ローカル専用のDBビューア。
 
 ## 起動方法
 
@@ -43,9 +43,9 @@ docker compose up -d workers admin-db
 
 ## デプロイ方法
 
-※ `sample-db` はDB名の例です。利用者が用途に合う名前を決めてください。別名にする場合は、以下のコマンド、両方の `wrangler.jsonc` の `database_name`、`source/package.json` の `db:migrate:local`・`db:migrate:remote` を同じ名前に揃えます。
+※ `workers-starter-db` はDB名の例です。利用者が用途に合う名前を決めてください。別名にする場合は、以下のコマンド、両方の `wrangler.jsonc` の `database_name`、`source/package.json` の `db:migrate:local`・`db:migrate:remote` を同じ名前に揃えます。
 
-本番用D1を `docker compose exec workers npx wrangler d1 create sample-db` で作成し、発行された `database_id` を両方の `wrangler.jsonc` に設定します。
+本番用D1を `docker compose exec workers npx wrangler d1 create workers-starter-db` で作成し、発行された `database_id` を両方の `wrangler.jsonc` に設定します。
 
 Cloudflareの「アプリケーションをセットアップする」画面でGitHubリポジトリを選び、以下を設定します。
 
@@ -62,7 +62,7 @@ Cloudflareの「アプリケーションをセットアップする」画面でG
 | 環境変数 | このスターターでは追加不要 |
 
 ```bash
-npx wrangler d1 migrations apply sample-db --remote && npx wrangler deploy
+npx wrangler d1 migrations apply workers-starter-db --remote && npx wrangler deploy
 ```
 
 APIトークン欄の「新しいトークンを作成する」を使うか、既存トークンを選択します。自動作成されたトークンの既定権限は残し、[My Profile → API Tokens](https://dash.cloudflare.com/profile/api-tokens) で以下を確認・追加してください。アカウントの対象はデプロイ先に合わせます。
