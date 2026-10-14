@@ -11,8 +11,9 @@
     {
       "binding": "DB",
       "database_name": "workers-starter-db",
-      // ローカル開発用ID。本番では作成したworkers-starter-dbのIDに両Workerとも差し替える。
-      "database_id": "00000000-0000-4000-8000-000000000001",
+      "database_id": "d1dbbbbc-5738-4844-8d7f-084564393eaa",
+      // ローカル開発用ID。管理画面と揃え、既存のローカルDBを引き継ぐ。
+      "preview_database_id": "00000000-0000-4000-8000-000000000001",
       "migrations_dir": "./migrations"
     }
   ]

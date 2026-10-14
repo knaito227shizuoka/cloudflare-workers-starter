@@ -12,8 +12,9 @@
     {
       "binding": "DB",
       "database_name": "workers-starter-db",
-      // source/wrangler.jsoncと同じID・Composeの状態ボリュームを使う。
-      "database_id": "00000000-0000-4000-8000-000000000001"
+      "database_id": "d1dbbbbc-5738-4844-8d7f-084564393eaa",
+      // source/wrangler.jsoncと同じローカルID・Composeの状態ボリュームを使う。
+      "preview_database_id": "00000000-0000-4000-8000-000000000001"
     }
   ]
 }

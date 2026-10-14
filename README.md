@@ -45,7 +45,15 @@ docker compose up -d workers admin-db
 
 ※ `workers-starter-db` はDB名の例です。利用者が用途に合う名前を決めてください。別名にする場合は、以下のコマンド、両方の `wrangler.jsonc` の `database_name`、`source/package.json` の `db:migrate:local`・`db:migrate:remote` を同じ名前に揃えます。
 
-本番用D1を `docker compose exec workers npx wrangler d1 create workers-starter-db` で作成し、発行された `database_id` を両方の `wrangler.jsonc` に設定します。
+本番のD1データベースは初回に手動で作成します。デプロイ時のマイグレーションは、そのDB内にテーブルを作成する処理です。[D1の作成・設定手順](https://developers.cloudflare.com/d1/get-started/)。
+
+1. Cloudflareのダッシュボードでデプロイ先アカウントの「D1 SQL database」を開きます。
+2. 「Create Database」を選び、名前を `workers-starter-db` にして作成します。既にある場合はそのDBを開きます。
+3. 作成したDBのデータベースID（UUID）をコピーします。
+4. `source/wrangler.jsonc` と `source-db-admin/wrangler.jsonc` の `database_id` にUUIDを設定します。ローカル用の `preview_database_id` はそのままにします。
+5. 設定変更をコミットしてGitHubへプッシュし、その後に以下のWorker作成・デプロイ設定を行います。
+
+UUIDは認証情報ではないため、環境変数ではなくWrangler設定で管理します。APIトークンはCloudflareのビルド設定で管理します。
 
 Cloudflareの「アプリケーションをセットアップする」画面でGitHubリポジトリを選び、以下を設定します。
 
