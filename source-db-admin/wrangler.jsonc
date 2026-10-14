@@ -1,0 +1,19 @@
+{
+  // ローカル専用。Cloudflareへのデプロイ対象はsource/のみ。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sample-db-admin",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "./public",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sample-db",
+      // source/wrangler.jsoncと同じID・Composeの状態ボリュームを使う。
+      "database_id": "00000000-0000-4000-8000-000000000001"
+    }
+  ]
+}

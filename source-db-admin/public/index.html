@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>ローカルDBビューア</title>
+    <link rel="stylesheet" href="/index.css">
+    <script src="/index.js" defer></script>
+  </head>
+  <body>
+    <header><h1>ローカルDBビューア</h1><span>読み取り専用</span></header>
+    <div class="layout">
+      <aside aria-label="DB・テーブル一覧">
+        <button id="refresh" type="button">更新</button>
+        <nav id="databases"></nav>
+      </aside>
+      <main>
+        <h2 id="table-name">テーブルを選択してください</h2>
+        <p id="status" role="status"></p>
+        <section id="content" hidden>
+          <details class="columns-section">
+            <summary>カラム</summary>
+            <div class="table-scroll"><table id="columns"></table></div>
+          </details>
+          <h3>レコード</h3>
+          <div class="table-scroll"><table id="rows"></table></div>
+          <div class="pagination">
+            <button id="previous" type="button">前へ</button>
+            <span id="page"></span>
+            <button id="next" type="button">次へ</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

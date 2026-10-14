@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cloudflare-workers-starter",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "./public",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sample-db",
+      // ローカル開発用ID。本番では作成したsample-dbのIDに両Workerとも差し替える。
+      "database_id": "00000000-0000-4000-8000-000000000001",
+      "migrations_dir": "./migrations"
+    }
+  ]
+}
