@@ -61,17 +61,13 @@ Cloudflareの「アプリケーションをセットアップする」画面でG
 | --- | --- |
 | プロジェクト名 | `cloudflare-workers-starter`（`source/wrangler.jsonc` の `name` と一致させる） |
 | ビルドコマンド | 空欄 |
-| デプロイコマンド | 下記のコマンド |
+| デプロイコマンド | `npx wrangler d1 migrations apply workers-starter-db --remote && npx wrangler deploy` |
 | プレビューコマンド | `npx wrangler preview` |
 | プレビュービルドを有効化 | 本番だけを配信する場合はオフ |
 | Cloudflare Accessで保護 | 公開ページとして使う場合はオフ |
 | 詳細設定 → パス | `source` |
 | 詳細設定 → APIトークン | 下記の権限を持つ、このアカウントのユーザートークン |
 | 環境変数 | このスターターでは追加不要 |
-
-```bash
-npx wrangler d1 migrations apply workers-starter-db --remote && npx wrangler deploy
-```
 
 APIトークン欄の「新しいトークンを作成する」を使うか、既存トークンを選択します。自動作成されたトークンの既定権限は残し、[My Profile → API Tokens](https://dash.cloudflare.com/profile/api-tokens) で以下を確認・追加してください。アカウントの対象はデプロイ先に合わせます。
 
