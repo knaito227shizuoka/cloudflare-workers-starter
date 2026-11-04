@@ -2,6 +2,10 @@
 
 Cloudflare Workers + D1 (`workers-starter-db`) のカウンターと、ローカル専用のDBビューア。
 
+## ドキュメントの役割
+
+この README はプロジェクトの構成と利用・開発・デプロイの手順を管理します。エージェント向けの作業ルールは [AGENTS.md](AGENTS.md) に記載し、コマンドや設定値はこの README に集約します。
+
 ## 起動方法
 
 DockerとDocker Composeを用意し、リポジトリのルートで実行します。npmはすべてコンテナ内で実行します。
